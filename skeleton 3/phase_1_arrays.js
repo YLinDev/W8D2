@@ -28,17 +28,29 @@ Array.prototype.uniq = function() {
 
 Array.prototype.two_sum = function() {
     const result = [];
-    for(let i=0; i < this.length - 2; i++) {
-        for(let j=i+1; j < this.length -1; j++) {
+    for(let i=0; i <= this.length - 2; i++) {
+        for(let j=i+1; j <= this.length -1; j++) {
             if(this[i]+this[j]===0) {
                 result.push([i,j]);
             }
-
         }
-
     }
-    return result
+    return result;
+}
+// console.log(my_two_sum_arr.two_sum())
+
+Array.prototype.tranpose = function() {
+    const store = this 
+    const result = [];
+    for(let i = 0; i < store[0].length; i++){
+        const temp = [];
+        for(let j = 0; j < store.length; j++){
+            temp.push(store[j][i]);
+        }
+        result.push(temp);
+    }
+    return result;
 }
 
+//console.log([[0,1,2],[2,4,6]].tranpose()) //[[0,2],[1,4],[2,6]]
 
-console.log(my_two_sum_arr.two_sum())
